@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快速入门</title>
+    <script src="js/vuejs-2.5.17.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        {{100 + 100 + message}} <br>
+        {{message > 10 ? "OK":"小屁孩"}} <br>
+        {{message1}}
+
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data: {
+                message:10,
+                message1:'helloWorld'
+            }
+        });
+    </script>
+</body>
+</html>

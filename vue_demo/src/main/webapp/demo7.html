@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>快速入门</title>
+    <script src="js/vuejs-2.5.17.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+       <font v-bind:style="{color:ys}">123123</font>
+       <a v-bind:href="info">itcast</a>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+          message:"<h1>Hello World</h1>",
+            ys:"red",
+            info:"http://www.itcast.cn"
+        },
+        methods:{
+            fun1:function () {
+                alert("div....");
+            },
+            fun2:function(e) {
+                alert("textarea......");
+                //阻止冒泡
+                e.stopPropagation();
+            }
+        }
+    });
+</script>
+</html>

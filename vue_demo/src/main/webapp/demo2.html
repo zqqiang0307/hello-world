@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>快速入门</title>
+    <script src="js/vuejs-2.5.17.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+
+        <button v-on:click="fun('good')">点击改变</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message : 1
+        },
+        methods:{
+            fun:function (msg) {
+                //this代表的是vue对象
+                this.message = msg;
+            }
+        }
+    });
+</script>
+</html>

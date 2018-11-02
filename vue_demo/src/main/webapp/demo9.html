@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>快速入门</title>
+    <script src="js/vuejs-2.5.17.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <ul v-for="user in users">
+            {{user.username}}----{{user.age}}
+        </ul>
+    </div>
+
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            users:[]
+        },
+        methods:{
+            init:function() {
+                var a = axios.get('./data/user.json').then(function (response) {
+                    return response.data;
+                })
+                return a;
+            }
+
+        },
+        created:function () {
+            this.$data.users = this.init();
+            console.log(this.$data.users);
+        }
+    });
+</script>
+</html>

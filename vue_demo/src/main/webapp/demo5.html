@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>快速入门</title>
+    <script src="js/vuejs-2.5.17.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <form @submit.prevent action="http://www.itcast.cn">
+            <input type="submit" value="提交">
+        </form>
+
+        <div @click="fun1">
+            <a @click.stop.prevent href="http://www.itcast.cn">itcast</a>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        methods:{
+            fun1:function () {
+                alert("div....");
+            },
+            fun2:function(e) {
+                alert("textarea......");
+                //阻止冒泡
+                e.stopPropagation();
+            }
+        }
+    });
+</script>
+</html>

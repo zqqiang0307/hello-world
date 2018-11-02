@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>快速入门</title>
+    <script src="js/vuejs-2.5.17.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <ul v-for="(s,key) in arr">
+            {{s}}----{{key}}
+        </ul>
+        <ul v-for="(value,index) in list">
+            {{value.username}}---{{index}}
+        </ul>
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+         arr:['aaa','bbb','ccc'],
+         list:[
+             {username:'Join',age:18},
+             {username:'Rose',age:'17'},
+             {username:'Jackson',age:'20'}
+         ]
+        },
+        methods:{
+            fun1:function () {
+                alert("div....");
+            },
+            fun2:function(e) {
+                alert("textarea......");
+                //阻止冒泡
+                e.stopPropagation();
+            }
+        }
+    });
+</script>
+</html>
